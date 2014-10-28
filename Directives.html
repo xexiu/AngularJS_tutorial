@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Directives</title>
+  <link rel="stylesheet" href="css/foundation.css">
+</head>
+<body>
+  <h1>We are gonna explain Directives as components and containers</h1>
+  <div ng-app="app">
+
+    <clock timezone="MST"></clock><!-- Component -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <panel title="I am a title"><!-- Container -->
+      <clock timezone="PST"></clock><!-- Component inside the Container -->
+    </panel>
+    <br>
+    <br>
+    <br>
+    <br>
+    <panel title="I am a title"><!-- Container -->
+      <clock timezone="PST"></clock><!-- Component inside the Container -->
+      <clock timezone="PST"></clock><!-- Component inside the Container -->
+      <clock timezone="PST"></clock><!-- Component inside the Container -->
+      <clock timezone="PST"></clock><!-- Component inside the Container -->
+      <clock timezone="PST"></clock><!-- Component inside the Container -->
+    </panel>
+
+  </div>
+  <script src="js/angular1.2.0.min.js"></script>
+  <script src="js/directives.js"></script>
+</body>
+</html>
