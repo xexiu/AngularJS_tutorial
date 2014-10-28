@@ -1,4 +1,4 @@
-angular.module('invoice1', [])
+angular.module('invoice1', []) // Call the name of the app from HTML document line 12
 .controller('InvoiceController', function(){
   this.qty = 1;
   this.cost = 2;
