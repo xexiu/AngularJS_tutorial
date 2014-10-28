@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>How Compile Works</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <script>
+    var $compile = ...; // injected into your code
+    var scope = ...;
+    var parent = ...; // DOM element where the compiled template can be appended
+
+    var html = '<div ng-bind="exp"></div>';
+
+    // Step 1: parse HTML into DOM element
+    var template = angular.element(html);
+
+    // Step 2: compile the template
+    var linkFn = $compile(template);
+
+    // Step 3: link the compiled template with the scope.
+    var element = linkFn(scope);
+
+    // Step 4: Append to DOM (optional)
+    parent.appendChild(element);
+  </script>
+  <script src="js/angular1.3.0.min.js"></script>
+</body>
+</html>
