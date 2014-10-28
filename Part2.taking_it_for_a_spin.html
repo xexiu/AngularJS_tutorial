@@ -7,9 +7,7 @@
   <link rel="stylesheet" href="css/foundation.css">
 </head>
 <body>
-  <div ng-app="">
-    <input type="text" ng-model="data.message"> <!-- NO Controller -->
-    <h1>{{data.message}}</h1>
+  <div ng-app="myApp">
 
     <div ng-controller="FirstController"> <!-- This div will have the SCOPE of THAT controller -->
       <input type="text" ng-model="data.message">
@@ -22,7 +20,7 @@
     </div>
 
   </div>
-  <script src="js/main.js"></script>
   <script src="js/angular1.2.0.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
