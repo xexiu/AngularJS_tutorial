@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="cssChange">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Navbar Example (ng-click)</title>
+  <link rel="stylesheet" href="css/foundation.css">
+  <style>
+  span {
+    cursor: pointer;
+  }
+
+  .selected-class-name {
+    color: red;
+  }
+</style>
+</head>
+<body ng-controller="MainCtrl">
+
+  <div>
+    <span ng-repeat="item in collection"
+    ng-class="{ 'selected-class-name': $index == selectedIndex }"
+    ng-click="itemClicked($index)">
+    {{ item }}
+  </span>
+</div>
+
+<script src="js/angular1.2.0.min.js"></script>
+<script src="js/css_change_ngClick.js"></script>
+</body>
+</html>
