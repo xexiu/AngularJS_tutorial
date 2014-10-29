@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="Calculator">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Shopping Cart APP</title>
+  <link rel="stylesheet" href="css/foundation.css">
+</head>
+<body>
+  <form ng-controller="StartUpController" ng-submit="requestFunding()">
+    Starting: <input ng-change="computeNeeded()" ng-model="startingEstimate">
+    Recommendation: {{ needed }}
+    <button>Fund my startup!</button>
+    <button ng-click="reset()">Reset</button>
+  </form>
+
+  <script src="js/angular1.2.0.min.js"></script>
+  <script src="js/startup_calculator.js"></script>
+</body>
+</html>
