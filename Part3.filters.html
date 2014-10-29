@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Part 2</title>
+  <link rel="stylesheet" href="css/foundation.css">
+</head>
+<body>
+  <div ng-app="myApp">
+
+    <div ng-controller="FirstController"> <!-- This div will have the SCOPE of THAT controller -->
+      <input type="text" ng-model="data.message">
+      <h1>{{data.message}}</h1>
+    </div>
+
+    <div ng-controller="SecondController"> <!-- This div will have the SCOPE of THAT controller -->
+      <input type="text" ng-model="data.message">
+      <h1>{{data.message | reverse}}</h1>
+    </div>
+
+    <!-- Search Filter provided by angular.js -->
+    <div ng-controller="AvengersController">
+      <input type="text" ng-model="searchText" placeholder="Search here...">
+      <!-- search.name or search.character or seach.$ ($ searches both - name and character) -->
+      <table>
+        <tr ng-repeat="actor in Avengers.cast | orderBy: 'name' | limitTo: 5 | filter:searchText">
+          <td>{{ actor.name | lowercase }}</td>
+          <td>{{ actor.character | uppercase }}</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+  <script src="js/angular1.2.0.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
