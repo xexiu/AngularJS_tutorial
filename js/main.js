@@ -22,3 +22,43 @@ function SecondController($scope, myData){
     return message.split('').reverse().join('');
   }; */
 }
+
+// Search filter provided by angular
+myApp.factory('Avengers', function(){
+  var Avengers = {};
+  Avengers.cast = [
+  {
+    name: "Sergio",
+    character: "capitan america"
+  },
+  {
+    name: "Savia",
+    character: "baby deep"
+  },
+  {
+    name: "pedro",
+    character: "thor"
+  },
+  {
+    name: "steve",
+    character: "apple"
+  },
+  {
+    name: "bill gates",
+    character: "windows"
+  },
+  {
+    name: "nokia",
+    character: 3310
+  },
+  {
+    name: "apple",
+    character: "iphone"
+  }
+  ];
+  return Avengers;
+});
+
+function AvengersController($scope, Avengers){
+  $scope.Avengers = Avengers;
+}
