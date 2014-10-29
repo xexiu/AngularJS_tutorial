@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="Navbar">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Navbar Example (ng-click)</title>
+  <link rel="stylesheet" href="css/foundation.css">
+</head>
+<body>
+  <!-- Example of ng-click 1 -->
+  <div class="navbar" style="background-color: black; height: 50px;" ng-controller="NavController">
+    <li class="menu-item" style="background-color: white;" ng-click="doSomething()">Click me</li>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <!-- Example of ng-click 2 -->
+  <div class="contentArea" style="background-color: red; height: 50px;" ng-controller="ContentAreaController">
+    <li style="background-color: blue; height: 20px;" ng-click="doSomething()">Click me</li>
+  </div>
+
+  <script src="js/angular1.2.0.min.js"></script>
+  <script src="js/navbar_example.js"></script>
+</body>
+</html>
