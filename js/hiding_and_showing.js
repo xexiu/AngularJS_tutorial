@@ -4,6 +4,9 @@ hideShow.controller('DeathrayMenuController', function($scope){
   $scope.toggleMenu = function() {
     $scope.menuState = !$scope.menuState; // true
     // return console.log('hi');
+    scope: {
+      index: '@'
+    }
   };
 
   $scope.stun = function(){
@@ -15,6 +18,6 @@ hideShow.controller('DeathrayMenuController', function($scope){
   };
 
   $scope.erase = function(){
-    return console.log('erase');
+    console.log($scope);
   };
 });
