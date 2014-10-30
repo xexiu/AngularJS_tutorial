@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="ngRepeat">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ngRepeat</title>
+  <link rel="stylesheet" href="css/foundation.css">
+</head>
+<body >
+  <div ng-controller='StudentListController'>
+    <ul>
+      <li ng-repeat='student in students'>
+        <a href='/student/view/{{student.id}}'>{{student.name}}</a>
+      </li>
+    </ul>
+    <button ng-click="insertTom()">Insert</button>
+  </div>
+
+  <table ng-controller='AlbumController'>
+    <tr ng-repeat='track in album'>
+      <td>{{$index + 1}}</td>
+      <td>{{track.name}}</td>
+      <td>{{track.duration}}</td>
+    </tr>
+  </table>
+  <script src="js/angular1.2.0.min.js"></script>
+  <script src="js/ngRepeat.js"></script>
+</body>
+</html>

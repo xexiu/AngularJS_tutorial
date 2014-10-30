@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="dr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CSS Classes and Styles</title>
+  <link rel="stylesheet" href="css/foundation.css">
+</head>
+<style>
+.menu-disabled-true {
+  color: gray;
+}
+.error {
+  background-color: red;
+}
+.warning {
+  background-color: yellow;
+}
+
+.selected {
+  background-color: lightgreen;
+}
+</style>
+<body>
+  <div ng-controller='DeathrayMenuController'>
+    <ul>
+      <li class='menu-disabled-{{isDisabled}}' ng-click='stun()'>Stun</li>
+    </ul>
+  </div>
+
+
+  <div ng-controller='HeaderController'>
+    <div ng-class='{error: isError, warning: isWarning}'>{{messageText}}</div>
+    <button ng-click='showError()'>Simulate Error</button>
+    <button ng-click='showWarning()'>Simulate Warning</button>
+  </div>
+
+
+  <table ng-controller='RestaurantTableController'>
+    <tr ng-repeat='restaurant in directory' ng-click='selectRestaurant($index)'
+    ng-class='{selected: $index == selectedRow}'>
+    <td>{{restaurant.name}}</td>
+    <td>{{restaurant.cuisine}}</td>
+  </tr>
+</table>
+
+<script src="js/angular1.2.0.min.js"></script>
+<script src="js/css_classes_and_styles.js"></script>
+</body>
+</html>

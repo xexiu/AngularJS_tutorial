@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="hideShow">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hiding and Showing</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+
+  <div ng-controller="DeathrayMenuController">
+    <button ng-click="toggleMenu()">Toggle Menu</button>
+    <ul ng-show="menuState">
+      <li ng-click="stun()">Stun</li>
+      <li ng-click="disintegrate()">Disintegrate</li>
+      <li ng-click="erase()">Erase from history</li>
+    </ul>
+  </div>
+
+  <script src="js/angular1.2.0.min.js"></script>
+  <script src="js/hiding_and_showing.js"></script>
+</body>
+</html>
