@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Publishing Model Data with Scopes</title>
+  <link rel="stylesheet" href="css/foundation.css">
+</head>
+<body>
+  <button ng-click='count=3'>Set count to three</button>
+  <span>{{ count }}</span>
+  <!-- Same as -->
+  <div ng-controller='CountController'>
+    <button ng-click='setCount()'>Set count to three</button>
+    <span>{{ count }}</span>
+  </div>
+
+  <script src="js/angular1.2.0.min.js"></script>
+  <script src="js/publishing_model_data_with_scopes.js"></script>
+</body>
+</html>
