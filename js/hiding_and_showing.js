@@ -18,6 +18,6 @@ hideShow.controller('DeathrayMenuController', function($scope){
   };
 
   $scope.erase = function(){
-    console.log($scope);
+    $scope.erased = true;
   };
 });
