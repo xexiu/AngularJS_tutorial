@@ -6,13 +6,18 @@
   <title>Shopping Cart APP</title>
   <link rel="stylesheet" href="css/foundation.css">
 </head>
-<body ng-controller="CartController">
+<body>
   <h1>Your Order</h1>
-  <div ng-repeat="item in items">
-    <span>{{ item.title }}</span>
-    <input ng-model="item.quantity">
-    <span>{{ item.price | currency }} Per item</span>
-    <span>{{ item.price * item.quantity | currency }} item(s)</span>
+  <div ng-controller="CartController">
+    <div ng-repeat="item in items">
+      <span>{{ item.title }}</span>
+      <input ng-model="item.quantity">
+      <span>{{ item.price | currency }} Per item</span>
+      <span>{{ item.price * item.quantity | currency }} item(s)</span>
+    </div>
+    <div>Total: {{ bill.totalCart | currency }}</div>
+    <div>Discount: {{ bill.discount | currency }}</div>
+    <div>Subtotal: {{ bill.subtotal | currency }}</div>
     <button ng-click="remove($index)">Remove</button>
   </div>
   <script src="js/angular1.2.0.min.js"></script>

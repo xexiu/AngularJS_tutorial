@@ -1,5 +1,7 @@
 var myShopCart = angular.module('ShopCart', []);
-function CartController($scope){
+myShopCart.controller('CartController', function($scope){
+  $scope.bill = {};
+
   $scope.items = [
   {
     title: 'Paint Pots',
@@ -17,7 +19,13 @@ function CartController($scope){
     price: 6.95
   }
   ];
-  $scope.remove = function(index){
-    $scope.items.splice(index, 1);
-  };
-}
+  $scope.$watch(function() {
+    var total = 0;
+    for (var i = 0, len = $scope.items.length; i < len; i++) {
+      total = total + $scope.items[i].price * $scope.items[i].quantity;
+    }
+    $scope.bill.totalCart = total;
+    $scope.bill.discount = total > 100 ? 10 : 0;
+    $scope.bill.subtotal = total - $scope.bill.discount;
+  });
+});
